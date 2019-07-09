@@ -62,6 +62,7 @@ public class ConnectionInfo implements Comparable<ConnectionInfo>{
 
     @Override
     public String toString() {
-        return time + " " + sessionId + " " + userIp + " " + user.getLogin();
+        return time + " " + sessionId + " " + userIp + " " + user.getLogin() + " " +
+                user.getPassword() + " " + user.getId();
     }
 }

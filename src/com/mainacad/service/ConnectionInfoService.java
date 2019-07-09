@@ -4,6 +4,7 @@ import com.mainacad.model.ConnectionInfo;
 import com.mainacad.model.User;
 import com.mainacad.util.Randomizer;
 
+import java.util.Collection;
 import java.util.Date;
 import java.util.PriorityQueue;
 import java.util.Queue;
@@ -31,4 +32,13 @@ public class ConnectionInfoService {
         }
         return connections;
     }
+
+    public static String getConnectionsAsText(Collection<ConnectionInfo> connections){
+        String outText = "";
+        for (ConnectionInfo connectionInfo : connections) {
+            outText += connectionInfo.toString() + "\n";
+        }
+        return outText;
+    }
+
 }

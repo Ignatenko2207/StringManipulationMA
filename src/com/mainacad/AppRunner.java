@@ -17,9 +17,10 @@ public class AppRunner {
 
         logger.info("My system generated " + connections.size() + " connections.");
 
-        for (ConnectionInfo connectionInfo : connections) {
-            logger.info(connectionInfo.toString());
-        }
+        String connectionsAsText = ConnectionInfoService.getConnectionsAsText(connections);
+        logger.info("\n" + connectionsAsText);
+
+
 
     }
 }
