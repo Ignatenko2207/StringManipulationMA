@@ -22,6 +22,7 @@ class ConnectionInfoServiceTest {
         assertEquals(3, StringUtils.countMatches(result, "."));
 
 
-//        assertTrue(result.matches(".*(\\d{3}\\.\\d{3}\\.\\d{3}\\.\\d{3}).*"));
+        assertTrue(result.matches("(\\d{13}\\s\\d{7}\\s(\\d{1,3}.?){4}\\s" +
+        "[A-z0-9]+\\s[A-z0-9]+\\s\\d{5}\\n)+"));
     }
 }
