@@ -4,7 +4,6 @@ import com.mainacad.model.ConnectionInfo;
 
 import java.io.*;
 import java.nio.file.Files;
-import java.nio.file.Path;
 
 public class FileManagerService {
 
@@ -75,7 +74,7 @@ public class FileManagerService {
         return null;
     }
 
-    public static void writeText(String fileName, String text, boolean append){
+    public synchronized static void writeText(String fileName, String text, boolean append){
         try (FileWriter fileWriter = new FileWriter(FILES_DIR + fileName, append))
         {
             fileWriter.write(text + "\n");

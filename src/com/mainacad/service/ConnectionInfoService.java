@@ -1,6 +1,7 @@
 package com.mainacad.service;
 
 import com.mainacad.model.ConnectionInfo;
+import com.mainacad.model.Gender;
 import com.mainacad.model.User;
 import com.mainacad.util.Randomizer;
 
@@ -25,7 +26,7 @@ public class ConnectionInfoService {
             User user = new User(
                     Randomizer.getRandomNumber(10000, 99999),
                     Randomizer.getRandomString(10),
-                    Randomizer.getRandomString(12));
+                    Randomizer.getRandomString(12), Gender.FEMALE);
 
             ConnectionInfo connectionInfo = new ConnectionInfo(sessionId, userIp, time, user);
             connections.add(connectionInfo);
@@ -49,7 +50,7 @@ public class ConnectionInfoService {
         for (String line : lines){
             String[] words = line.split(" ");
 
-            User user = new User(Integer.valueOf(words[5]), words[3], words[4]);
+            User user = new User(Integer.valueOf(words[5]), words[3], words[4], Gender.FEMALE);
 
             ConnectionInfo connectionInfo = new ConnectionInfo(Integer.valueOf(words[1]),
                     words[2], Long.valueOf(words[0]), user);
